@@ -5,7 +5,8 @@
 <br>
 
 ## *Index*
- ### **[DataStructure](https://github.com/MoochiPark/second-run/tree/master/DataStructure)**
+### DataStructure
+ - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/DataStructure/Presentation)**
 
 <br>
 
