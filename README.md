@@ -5,6 +5,7 @@
 <br>
 
 ## *Index*
+ [DataStructure](https://github.com/MoochiPark/first-run/tree/master/DataStructure)**
 
 <br>
 
