@@ -30,7 +30,7 @@
 
   > CdS Cell
 
-  ![1555312025939](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555312025939.png)
+  ![1555312025939](./img/cds.png)
 
   - 패널의 4방향에 조도 센서를 설치하고 각 조도센서의 값의 차이를 구한다.
   - 받은 조도값을 이용해 현실에서의 태양광 발전량을 대체한다.
