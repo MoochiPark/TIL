@@ -39,7 +39,7 @@
 
   > SG-90
 
-  ![1555312044907](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555312044907.png)
+  ![1555312044907](./img/sv.png)
 
   - 서보 모터는 수평 서보모터와 수직 서보 모터 두 개가있다.
   - 각 서보 모터는 조도 센서에서 얻은 값을 이용하여 조도 값이 높은 방향으로 패널을 회전한다.
@@ -51,7 +51,7 @@
 
   > HC-SR04, SM-1205C
 
-  ![1555312114694](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555312114694.png)
+  ![1555312114694](./img/us.png)
 
   - 조류나 기타 방해물로 부터 패널에 접근이 있을 시 서보 모터를 좌우로 회전하고 부저를 울려 경고한다.
 
@@ -59,7 +59,7 @@
 
   > HC-06, ITS-1103
 
-  ![1555312147190](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555312147190.png)
+  ![1555312147190](./img/bs.png)
 
   - 스위치가 눌리면 시스템을 수동모드로 전환하고 블루투스 통신을 이용하여 스마트폰을 이용해 
 
@@ -69,7 +69,7 @@
 
   > OLED 128x64 l2C
 
-  ![1555312346847](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555312346847.png)
+  ![1555312346847](./img/ol.png)
 
   - 평상시에는 태양광 발전량을 화면에 표시해준다.
   - 수동모드일 시, 화면에 `Manual Mode`라고 출력된다.
@@ -302,7 +302,7 @@ void alert() {        //서보 모터를 좌우로 회전하고 경고음과 화
 
   
 
-![1555313333435](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555313333435.png)
+![1555313333435](./img/normal.png)
 
 
 
@@ -312,7 +312,7 @@ void alert() {        //서보 모터를 좌우로 회전하고 경고음과 화
 
   
 
-![1555313432151](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555313432151.png)
+![1555313432151](./img/in.png)
 
 
 
@@ -320,15 +320,13 @@ void alert() {        //서보 모터를 좌우로 회전하고 경고음과 화
 
   수동 모드로 전환하여 스마트폰 어플리케이션과 블루투스 통신을 이용한 수동 조작
 
+![1555313463274](./img/sw1.png)
 
-
-![1555313463274](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555313463274.png)
-
-![1555313796797](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555313796797.png)
+![1555313796797](./img/sw2.png)
 
 구글 플레이스토어에서 `Arduino bluetooth controller`를 설치한다.
 
-![1555313887047](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\1555313887047.png)
+![1555313887047](./img/sw3.png)
 
 블루투스 모듈과 연결하여 Controller Mode로 키를 바인딩하여 컨트롤할 수 있다.
 
