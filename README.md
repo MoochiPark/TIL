@@ -6,8 +6,13 @@
 
 ## *Index*
 ### DataStructure
+<<<<<<< HEAD
  - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/datastructure/presentation)**
  - **[Arraylist](https://github.com/MoochiPark/second-run/tree/master/datastructure/arraylist)**
+=======
+ - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/DataStructure/Presentation)**
+ - **[Arraylist](https://github.com/MoochiPark/second-run/tree/master/DataStructure/Arraylist)**
+>>>>>>> 3c3d270a6f17e48646c29fcc43239d157c71330a
 
 ### Project
  - **[MicroProcessor](https://github.com/MoochiPark/second-run/tree/master/project/microprocessor)**
