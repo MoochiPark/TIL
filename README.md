@@ -6,13 +6,14 @@
 
 ## *Index*
 ### DataStructure
- - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/DataStructure/Presentation)**
+ - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/datastructure/presentation)**
+ - **[Arraylist](https://github.com/MoochiPark/second-run/tree/master/datastructure/arraylist)**
 
 ### Project
- - **[MicroProcessor](https://github.com/MoochiPark/second-run/tree/master/Project/MicroProcessor)**
-
+ - **[MicroProcessor](https://github.com/MoochiPark/second-run/tree/master/project/microprocessor)**
 
 <br>
 
 ## *Made by*
  - *Daewon Park* *[<daewon@wisoft.io>]*
+
