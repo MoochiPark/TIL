@@ -1,7 +1,7 @@
 # *Second Run*
 [![start date](https://img.shields.io/badge/START-19.05.09-orange.svg?style=flat-square&logo=github)]()
 
-![main](./img/vivek-doshi-1471071-unsplash.jpg)
+![main](./img/vivek-doshi-unsplash.jpg)
 
 
 
