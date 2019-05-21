@@ -1,5 +1,10 @@
 # *Second Run*
 [![start date](https://img.shields.io/badge/START-19.05.09-orange.svg?style=flat-square&logo=github)]()
+
+![main](./img/vivek-doshi-1471071-unsplash.jpg)
+
+
+
 - 이 저장소는 세미나 및 자가학습 자료를 정리하기위해 만들어진 두 번째 저장소 입니다.
 
 
@@ -24,4 +29,5 @@
 
 ## *Made by*
  - *Daewon Park* *[<daewon@wisoft.io>]*
+ -  *Photo by [Vivek Doshi](https://unsplash.com/photos/o8RfmVS0o_4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/running?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
