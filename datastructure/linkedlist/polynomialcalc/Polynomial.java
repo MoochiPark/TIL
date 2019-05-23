@@ -1,9 +1,9 @@
 package io.wisoft.seminar.datastructure.linkedlist.polynomialcalc;
 
-class Polynomial {
+public class Polynomial {
 
   private int currentCount = 0;
-  private Node headerNode;
+  private final Node headerNode;
 
   public Polynomial() {
     this.headerNode = new Node();
@@ -11,14 +11,14 @@ class Polynomial {
 
   private void insertNode(final int coef, final int degree) {
     Node newNode = new Node(coef, degree);
-    Node preNode = headerNode;
+    Node preNode = this.headerNode;
 
-    for (int i = 0; i < currentCount; i++)
+    for (int i = 0; i < this.currentCount; i++)
       preNode = preNode.next;
 
     newNode.next = preNode.next;
     preNode.next = newNode;
-    currentCount++;
+    this.currentCount++;
   }
 
   public void insertExp(String exp) {
@@ -35,45 +35,44 @@ class Polynomial {
     }
   }
 
-  public void display() {
-    for (Node pNode = headerNode.next; pNode != null; pNode = pNode.next) {
+  public void print() {
+    for (Node pNode = this.headerNode.next; pNode != null; pNode = pNode.next) {
       if (pNode.degree == 0) {
         System.out.format("%+d", pNode.coef);
       } else {
-        System.out.format("%+dx^%d", pNode.coef, pNode.degree);
+        System.out.format("%+dx^%d ", pNode.coef, pNode.degree);
       }
-    }
-    System.out.println();
+    } System.out.println();
   }
 
-  public Polynomial add(Polynomial anotherPolynomial) {
-    Polynomial result = new Polynomial();
-    Node a = headerNode.next;
-    Node b = anotherPolynomial.headerNode.next;
-
-    while (a != null && b != null) {
-      if (a.degree > b.degree) {              // A의 차수가 더 높은 경우
-        result.insertNode(a.coef, a.degree);
-        a = a.next;
-      } else if (a.degree < b.degree) {       // B의 차수가 더 높은 경우
-        result.insertNode(b.coef, b.degree);
-        b = b.next;
+  public Polynomial calc(final Polynomial anotherPolynomial, final int optional) {
+    Polynomial resultList = new Polynomial();
+    Node aList = this.headerNode.next;
+    Node bList = anotherPolynomial.headerNode.next;
+    int result;
+    while (aList != null && bList != null) {
+      if (aList.degree > bList.degree) {              // A의 차수가 더 높은 경우
+        resultList.insertNode(aList.coef, aList.degree);
+        aList = aList.next;
+      } else if (aList.degree < bList.degree) {       // B의 차수가 더 높은 경우
+        resultList.insertNode(bList.coef, bList.degree);
+        bList = bList.next;
       } else {                                // A, B의 차수가 같은 경우
-        int sum = a.coef + b.coef;
-        if (sum == 0) {                       // 계수의 합이 0일 때
-          a = a.next;
-          b = b.next;
+        result = (optional == 1) ? aList.coef + bList.coef : aList.coef - bList.coef;
+        if (result == 0) {
+          aList = aList.next;
+          bList = bList.next;
         } else {
-          result.insertNode(sum, a.degree);
-          a = a.next;
-          b = b.next;
+          resultList.insertNode(result, aList.degree);
+          aList = aList.next;
+          bList = bList.next;
         }
       }
     }
-    for (; a != null; a = a.next) result.insertNode(a.coef, a.degree);
-    for (; b != null; b = b.next) result.insertNode(b.coef, b.degree);
+    for (; aList != null; aList = aList.next) resultList.insertNode(aList.coef, aList.degree);
+    for (; bList != null; bList = bList.next) resultList.insertNode(bList.coef, bList.degree);
 
-    return result;
+    return resultList;
   }
 
 }
