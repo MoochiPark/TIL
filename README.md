@@ -9,17 +9,24 @@
 
 
 ## *Index*
+### Algorithm
+
+- **[BST](https://github.com/MoochiPark/second-run/tree/master/algorithm/bst)**
+- **[Hash Table](https://github.com/MoochiPark/second-run/tree/master/algorithm/hashtable)**
+- **[Sort](https://github.com/MoochiPark/second-run/tree/master/algorithm/sort)**
+
+### Database
+
+- **[JDBC](https://github.com/MoochiPark/second-run/tree/master/database/jdbc)**
+- [**Mybatis**](https://github.com/MoochiPark/second-run/tree/master/database/mybatis)
+
 ### DataStructure
+
  - **[Presentation](https://github.com/MoochiPark/second-run/tree/master/datastructure/presentation)**
  - **[Recursion](https://github.com/MoochiPark/second-run/tree/master/datastructure/recursion)**
  - **[Arraylist](https://github.com/MoochiPark/second-run/tree/master/datastructure/arraylist)**
  - **[LinkedList](https://github.com/MoochiPark/second-run/tree/master/datastructure/linkedlist)**
  - **[Programmers](https://github.com/MoochiPark/second-run/tree/master/datastructure/programmers)**
-
-### Algorithm
- - **[BST](https://github.com/MoochiPark/second-run/tree/master/algorithm/bst)**
- - **[Hash Table](https://github.com/MoochiPark/second-run/tree/master/algorithm/hashtable)**
- - **[Sort](https://github.com/MoochiPark/second-run/tree/master/algorithm/sort)**
 
 ### MVC
 
