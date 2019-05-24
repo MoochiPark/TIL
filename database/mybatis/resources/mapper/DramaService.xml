@@ -1,0 +1,62 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.wisoft.seminar.drama.DramaService">
+
+    <resultMap id="dramaResultMap" type="drama">
+        <id column="drm_code" property="code"/>
+        <result column="drm_name" property="name"/>
+        <result column="drm_prd" property="prd"/>
+        <result column="drm_brd" property="brd"/>
+        <result column="drm_opdate" property="opDate"/>
+    </resultMap>
+
+    <resultMap id="dramaCodeNameResultMap" type="drama">
+        <id column="drm_code" property="code"/>
+        <result column="drm_name" property="name"/>
+    </resultMap>
+
+    <resultMap id="dramaPrdResultMap" type="drama">
+        <id column="drm_prd" property="prd"/>
+    </resultMap>
+
+    <resultMap id="dramaNameResultMap" type="drama">
+        <id column="drm_name" property="name"/>
+    </resultMap>
+
+    <!--3번-->
+    <select id="getDramaByPrd" resultMap="dramaCodeNameResultMap">
+        SELECT drm_code, drm_name
+            FROM drama
+          where drm_prd = 'HNU-E'
+    </select>
+
+    <!--4번-->
+    <select id="getDramaByBrd" resultMap="dramaResultMap">
+        SELECT *
+            FROM drama
+            WHERE drm_brd IN ('KBC', 'SBC')
+
+    </select>
+
+    <!--5번-->
+    <select id="getDramaPrd" resultMap="dramaPrdResultMap">
+        SELECT DISTINCT drm_prd
+            FROM drama
+    </select>
+
+    <!--7번-->
+    <select id="getDramaNameByOpDateIsNull" resultMap="dramaNameResultMap">
+        SELECT drm_name
+            FROM drama
+            WHERE drm_opdate is NULL
+    </select>
+
+    <!--12번-->
+    <update id="updateDramaOpDate" parameterType="String">
+        UPDATE drama
+        SET drm_opdate = TO_TIMESTAMP(#{opDate}, 'YYYY-MM-DD HH24:MI:SS')
+        WHERE drm_opdate IS NULL
+    </update>
+</mapper>

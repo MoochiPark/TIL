@@ -1,0 +1,40 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.wisoft.seminar.student.StudentService">
+
+    <resultMap id="studentResultMap" type="student">
+        <id column="no" property="no"/>
+        <result column="name" property="name"/>
+        <result column="birthday" property="birthday"/>
+    </resultMap>
+
+    <insert id="insertStudent" parameterType="student">
+        INSERT INTO student
+        VALUES (#{no}, #{name}, TO_DATE(#{birthday}, 'yyyy-mm-dd'))
+    </insert>
+
+    <insert id="insertStudentList" parameterType="java.util.List">
+        INSERT INTO student
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.no}, #{item.name}, TO_DATE(#{item.birthday}, 'yyyy-mm-dd'))
+        </foreach>
+    </insert>
+
+    <select id="getStudentAll" resultMap="studentResultMap">
+        SELECT no, name, birthday
+          FROM student
+    </select>
+
+    <select id="getStudentListByNo" parameterType="java.util.List" resultMap="studentResultMap">
+        SELECT no, name, birthday
+          FROM student
+        WHERE no IN
+        <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

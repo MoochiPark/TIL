@@ -1,0 +1,19 @@
+CREATE TABLE DRAMA (
+  DRM_CODE VARCHAR(20) PRIMARY KEY,
+  DRM_NAME VARCHAR(20) NOT NULL,
+  DRM_PRD VARCHAR(20) NOT NULL,
+  DRM_BRD VARCHAR(20) NOT NULL,
+  DRM_OPDATE TIMESTAMP
+);
+
+INSERT INTO DRAMA VALUES ('DRM01', '왕의 게임', 'TG', 'SBC', '2013.01.01'),
+  ('DRM02', '아이러시', 'SN', 'KBC', '2013.01.01'),
+  ('DRM03', '야킹', 'TG', 'SBC', '2013.02.01'),
+  ('DRM04', '닥터 호', 'HNU-E', 'MBS', '2013.02.01'),
+  ('DRM05', '5급 사무관', 'SN', 'MBS', '2013.02.15'),
+  ('DRM06', '그 사람', 'XTS', 'XTS', '2013.02.15'),
+  ('DRM07', '여왕의 꿈', 'HNU-E', 'KBC', '2013.03.15'),
+  ('DRM08', '머니의 화신', 'TG', 'SBC', '2013.03.15');
+INSERT INTO DRAMA (DRM_CODE, DRM_NAME, DRM_PRD, DRM_BRD) VALUES
+  ('DRM09', '회사의 신', 'SN', 'KBC'),
+  ('DRM10', '수의사', 'HNU-E', 'XTS');

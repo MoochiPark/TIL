@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="dbms.properties"/>
+
+    <typeAliases>
+        <typeAlias type="io.wisoft.seminar.student.Student" alias="student"/>
+        <typeAlias type="io.wisoft.seminar.department.Department" alias="department"/>
+        <typeAlias type="io.wisoft.seminar.employee.Employee" alias="employee"/>
+        <typeAlias type="io.wisoft.seminar.drama.Drama" alias="drama"/>
+
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${dbms.driver}"/>
+                <property name="url" value="${dbms.url}"/>
+                <property name="username" value="${dbms.username}"/>
+                <property name="password" value="${dbms.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/StudentService.xml"/>
+        <mapper resource="mapper/DepartmentService.xml"/>
+        <mapper resource="mapper/EmployeeService.xml"/>
+        <mapper resource="mapper/DramaService.xml"/>
+    </mappers>
+</configuration>

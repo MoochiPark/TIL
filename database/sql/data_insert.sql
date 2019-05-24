@@ -1,0 +1,1 @@
+INSERT INTO user_data values ('daewon', '1234', '¹Ú´ë¿ø');

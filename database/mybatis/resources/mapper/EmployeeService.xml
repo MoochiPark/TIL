@@ -1,0 +1,96 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.wisoft.seminar.employee.EmployeeService">
+
+    <resultMap id="employeeResultMap" type="employee">
+        <id column="emp_code" property="code"/>
+        <result column="emp_name" property="name"/>
+        <result column="emp_mgt" property="mgt"/>
+        <result column="emp_sal" property="sal"/>
+    </resultMap>
+
+    <resultMap id="empSalSumAvgResultMap" type="employee">
+        <result column="sum" property="sum"/>
+    </resultMap>
+
+
+    <resultMap id="empNameMgtResultMap" type="employee">
+        <result column="연예관계자" property="name"/>
+        <result column="직속상사" property="name2"/>
+    </resultMap>
+
+    <resultMap id="empNameSalResultMap" type="employee">
+        <result column="emp_name" property="name"/>
+        <result column="emp_sal" property="sal"/>
+    </resultMap>
+
+    <resultMap id="empRoleSalResultMap" type="employee">
+        <result column="emp_rname" property="rname"/>
+        <result column="평균" property="avg"/>
+        <result column="최소" property="min"/>
+        <result column="최대" property="max"/>
+    </resultMap>
+
+    <!--14번-->
+    <insert id="insertEmployee" parameterType="employee">
+        INSERT INTO employee
+        VALUES (#{code}, #{name}, #{mgt}, #{sal}, #{rcode})
+    </insert>
+
+    <delete id="deleteEmployeeByName" parameterType="String">
+        DELETE
+        FROM employee
+        WHERE emp_name = #{name}
+    </delete>
+
+    <select id="getEmployeeAll" resultMap="employeeResultMap">
+        SELECT emp_code, emp_name, emp_mgt, emp_sal
+          FROM employee
+    </select>
+
+    <!--6번-->
+    <select id="getEmployeeSalSumAvg" resultMap="empSalSumAvgResultMap">
+        SELECT SUM (emp_sal), AVG (emp_sal)
+          FROM employee
+    </select>
+
+    <!--8번-->
+    <select id="getEmployeeNameByMgt" resultMap="empNameMgtResultMap">
+        SELECT (e1.emp_name) as 연예관계자, (e2.emp_name) as 직속상사
+          FROM employee e1, employee e2
+          WHERE e1.emp_mgt = e2.emp_code
+    </select>
+
+    <!--9번-->
+    <select id="getEmployeeNameSal" resultMap="empNameSalResultMap">
+        SELECT emp_name, emp_sal
+          FROM employee
+          ORDER BY emp_sal DESC , emp_name
+    </select>
+
+    <!--10번-->
+    <select id="getEmployeeRoleBySal" resultMap="empRoleSalResultMap">
+        SELECT r.emp_rname, ROUND(AVG (e.emp_sal),2) as 평균, MIN (e.emp_sal) as 최소, MAX (e.emp_sal) as 최대
+          FROM employee e, emp_role r
+          WHERE e.emp_rcode = r.emp_rcode GROUP BY emp_rname HAVING AVG (e.emp_sal) >= 5000
+    </select>
+
+    <!--11번-->
+    <select id="getEmployeeNameSalBySalAvg" resultMap="empNameSalResultMap">
+        SELECT emp_name, emp_sal
+          FROM employee
+          WHERE emp_sal > (SELECT AVG (emp_sal) FROM employee)
+    </select>
+
+    <!--13번-->
+    <update id="updateEmployeeKimPromotion">
+        UPDATE employee
+        SET emp_rcode = (select emp_rcode
+                          FROM emp_role
+                          WHERE emp_rname = '실장'),
+            emp_sal = emp_sal * 1.2
+            WHERE emp_name = '김수현'
+    </update>
+</mapper>

@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.wisoft.seminar.department.DepartmentService">
+
+    <resultMap id="departmentResultMap" type="department">
+        <id column="dept_code" property="code"/>
+        <result column="dept_name" property="name"/>
+        <result column="dept_loc" property="loc"/>
+    </resultMap>
+
+    <select id="getDepartmentAll" resultMap="departmentResultMap">
+        SELECT *
+          FROM department
+    </select>
+
+</mapper>

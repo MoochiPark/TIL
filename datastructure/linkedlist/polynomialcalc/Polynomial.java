@@ -24,14 +24,17 @@ public class Polynomial {
   public void insertExp(String exp) {
     exp = exp.replaceAll("[^0-9]{2}", " ")
         .replaceAll("[(+)]", " +")
-        .replaceAll("(-)", " -");
+        .replaceAll("(-)", " -")
+        .trim();
     String[] list = exp.split(" ");
-    for (int i = list[0].equals("") ? 1 : 0; i < list.length; i += 2) {
-      try {
+    try {
+      for (int i = 0; i < list.length - 1; i += 2)
         insertNode(Integer.parseInt(list[i]), Integer.parseInt(list[i + 1]));
-      } catch (ArrayIndexOutOfBoundsException e) {
-        insertNode(Integer.parseInt(list[i]), 0);
-      }
+      if (list.length % 2 == 1)
+        insertNode(Integer.parseInt(list[list.length - 1]), 0);
+    } catch (Exception e) {
+      System.out.println("잘못된 입력입니다.");
+      System.exit(0);
     }
   }
 
@@ -40,9 +43,10 @@ public class Polynomial {
       if (pNode.degree == 0) {
         System.out.format("%+d", pNode.coef);
       } else {
-        System.out.format("%+dx^%d ", pNode.coef, pNode.degree);
+        System.out.format("%+dx^%d", pNode.coef, pNode.degree);
       }
-    } System.out.println();
+    }
+    System.out.println();
   }
 
   public Polynomial calc(final Polynomial anotherPolynomial, final int optional) {
@@ -55,7 +59,7 @@ public class Polynomial {
         resultList.insertNode(aList.coef, aList.degree);
         aList = aList.next;
       } else if (aList.degree < bList.degree) {       // B의 차수가 더 높은 경우
-        resultList.insertNode(bList.coef, bList.degree);
+        resultList.insertNode(optional == 1 ? bList.coef : -bList.coef, bList.degree);
         bList = bList.next;
       } else {                                // A, B의 차수가 같은 경우
         result = (optional == 1) ? aList.coef + bList.coef : aList.coef - bList.coef;
@@ -69,8 +73,8 @@ public class Polynomial {
         }
       }
     }
-    for (; aList != null; aList = aList.next) resultList.insertNode(aList.coef, aList.degree);
-    for (; bList != null; bList = bList.next) resultList.insertNode(bList.coef, bList.degree);
+    for (Node node = aList != null ? aList : bList; node != null; node = node.next)
+      resultList.insertNode(optional == 1 ? node.coef : -node.coef, node.degree);
 
     return resultList;
   }
