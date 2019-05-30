@@ -14,6 +14,7 @@
 - **[BST](https://github.com/MoochiPark/second-run/tree/master/algorithm/bst)**
 - **[Hash Table](https://github.com/MoochiPark/second-run/tree/master/algorithm/hashtable)**
 - **[Sort](https://github.com/MoochiPark/second-run/tree/master/algorithm/sort)**
+- **[Dynamic Programming](https://github.com/MoochiPark/second-run/tree/master/algorithm/dynamicprogramming)**
 
 ### Database
 
