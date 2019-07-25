@@ -44,7 +44,7 @@
 
 ### Programmers
 
-- ##### 코딩테스트 고득점 Kit
+- #### 코딩테스트 고득점 Kit
 
   - ##### 해시
 
@@ -67,7 +67,7 @@
 
     - **[가장 큰 수](https://github.com/MoochiPark/second-run/tree/master/programmers/sort/largestnumber)**
 
-- ##### 연습문제
+- #### 연습문제
 
   - **[Level 1](https://github.com/MoochiPark/second-run/tree/master/programmers/practice/lv1)**
   - **[Level 2](https://github.com/MoochiPark/second-run/tree/master/programmers/practice/lv2)**
