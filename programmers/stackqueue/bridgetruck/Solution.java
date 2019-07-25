@@ -1,9 +1,9 @@
-package io.wisoft.seminar.programmers;
+package io.wisoft.seminar.programmers.bridgetruck;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BridgeTruck {
+public class Solution {
 
   private static int solution(final int bridgeLength, final int weight, final int[] truckWeights) {
     int answer = 0;

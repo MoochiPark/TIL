@@ -1,6 +1,4 @@
-# Chapte 06. STACK
-
-## Programmers : 탑
+## 탑 LV.2
 
 ###### 문제 설명
 
@@ -50,41 +48,4 @@
 [6] 번째 탑이 쏜 신호는 5번째 탑이 수신합니다.
 [7] 번째 탑이 쏜 신호는 6번째 탑이 수신합니다.
 
-
-
-###### 소스
-
-```java
-package io.wisoft.seminar.programmers;
-import java.util.Arrays;
-
-public class Tower {
-
-  private static int[] solution(int[] heights) {
-    int[] answer = new int[heights.length];
-    for (int i = 1; i < heights.length; i++)
-      for (int j = i; j > 0; j--)
-        if (heights[i] < heights[j - 1]) {
-          answer[i] = j;
-          break;
-        }
-    return answer;
-  }
-
-  public static void main(String[] args) {
-    int[] arr = {6, 9, 5, 7, 4};
-    System.out.println(Arrays.toString(solution(arr)));
-  }
-
-}
-```
-
-
-
-###### 실행 결과
-
-```java
-[0, 0, 2, 2, 4]
-```
-
-
+[출처](https://www.digitalculture.or.kr/koi/selectOlymPiadDissentList.do)

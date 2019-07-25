@@ -1,9 +1,9 @@
-package io.wisoft.seminar.programmers;
+package io.wisoft.seminar.programmers.tower;
 import java.util.Arrays;
 
-public class Tower {
+public class Solution {
 
-  private static int[] solution(int[] heights) {
+  private static int[] solution(final int[] heights) {
     int[] answer = new int[heights.length];
     for (int i = 1; i < heights.length; i++)
       for (int j = i; j > 0; j--)

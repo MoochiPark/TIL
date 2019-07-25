@@ -27,6 +27,7 @@
  - **[Recursion](https://github.com/MoochiPark/second-run/tree/master/datastructure/recursion)**
  - **[Arraylist](https://github.com/MoochiPark/second-run/tree/master/datastructure/arraylist)**
  - **[LinkedList](https://github.com/MoochiPark/second-run/tree/master/datastructure/linkedlist)**
+ - **[Heap](https://github.com/MoochiPark/second-run/tree/master/datastructure/heap)**
  - **[Programmers](https://github.com/MoochiPark/second-run/tree/master/datastructure/programmers)**
 
 ### MVC
