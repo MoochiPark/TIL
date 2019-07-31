@@ -42,15 +42,16 @@ pop 장르는 3,100회 재생되었으며, pop 노래는 다음과 같습니다.
 
 > #### 소스 코드
 ```java
+package io.wisoft.seminar.programmers.bestalbum;
+
 import java.util.*;
 
 public class Solution {
 
   public int[] solution(String[] genres, int[] plays) {
     LinkedList<Integer> answer = new LinkedList<>();
-    HashMap<String, PriorityQueue<Integer>> hash = new HashMap<>();
+    HashMap<String, PriorityQueue<Music>> classifiedHash = new HashMap<>();
     HashMap<String, Integer> sumHash = new HashMap<>();
-    PriorityQueue<Integer> tempQueue;
 
     for (int j = 0; j < genres.length; j++) {
       if (!sumHash.containsKey(genres[j])) {
@@ -60,55 +61,53 @@ public class Solution {
       }
     }
     for (int i = 0; i < genres.length; i++) {
-      if (!hash.containsKey(genres[i])) {
-        hash.put(genres[i], new PriorityQueue<>(Collections.reverseOrder()));
-        tempQueue = hash.get(genres[i]);
-        tempQueue.offer(plays[i]);
-        hash.put(genres[i], tempQueue);
-      } else {
-        tempQueue = hash.get(genres[i]);
-        tempQueue.offer(plays[i]);
-        hash.put(genres[i], tempQueue);
+      if (!classifiedHash.containsKey(genres[i])) {
+        classifiedHash.put(genres[i], new PriorityQueue<>(Comparator.comparing(Music::getPlay, Comparator.reverseOrder())));
       }
-    }
-    ArrayList<Integer> arrayList = new ArrayList<>();
-    for (int play : plays) {
-      arrayList.add(play);
+        classifiedHash.get(genres[i]).offer(new Music(i, plays[i]));
     }
     sumHash
-        .values()
+        .entrySet()
         .stream()
-        .sorted(Comparator.reverseOrder())
-        .forEach(playSum -> {
-          for (int i = 0; i < 2; i++) {
-            if (hash.get(getKey(sumHash, playSum)).size() == 1) {
-              answer.add(arrayList.indexOf(hash.get(getKey(sumHash, playSum)).peek()));
-              arrayList.set(arrayList.indexOf(hash.get(getKey(sumHash, playSum)).poll()), -1);
-              break;
-            } else {
-              answer.add(arrayList.indexOf(hash.get(getKey(sumHash, playSum)).peek()));
-              arrayList.set(arrayList.indexOf(hash.get(getKey(sumHash, playSum)).poll()), -1);
+        .sorted(Comparator.comparing(Map.Entry::getValue, Comparator.reverseOrder()))
+        .forEach(entry -> {
+          String genre = entry.getKey();
+          answer.add(classifiedHash.get(genre).poll().getIndex());
+            if (classifiedHash.get(genre).size() >= 1) {
+              answer.add(classifiedHash.get(genre).poll().getIndex());
             }
-          }
         });
+
     return answer.stream().mapToInt(i -> i).toArray();
   }
 
-  public static String getKey(Map<String, Integer> map, int value) {
-    for (String key : map.keySet()) {
-      if (map.get(key).equals(value)) {
-        return key;
-      }
+  class Music {
+
+    private int index;
+    private int play;
+
+    public Music(int index, int play) {
+      this.index = index;
+      this.play = play;
     }
-    return null;
+
+    public int getIndex() {
+      return index;
+    }
+
+    public int getPlay() {
+      return play;
+    }
+
   }
 
   public static void main(String[] args) {
     Solution bestAlbum = new Solution();
     int[] ans = bestAlbum.solution(new String[]{"classic", "pop", "classic", "pop", "classic", "classic"}, new int[]{400, 600, 150, 2500, 500, 500});
-
+    System.out.println(Arrays.toString(ans));
 
   }
 
 }
+
 ```
