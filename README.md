@@ -1,4 +1,4 @@
-# *Second Run*
+# *Today I Learned*
 [![start date](https://img.shields.io/badge/START-19.05.09-orange.svg?style=flat-square&logo=github)]() ![GitHub last commit](https://img.shields.io/github/last-commit/MoochiPark/second-run?style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/moochipark/second-run?color=orange&logo=java&style=flat-square)
 ![main](./img/vivek-doshi-unsplash.jpg)
 
