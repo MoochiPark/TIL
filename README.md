@@ -2,7 +2,6 @@
 [![start date](https://img.shields.io/badge/START-19.05.09-orange.svg?style=flat-square&logo=github)]() ![GitHub last commit](https://img.shields.io/github/last-commit/MoochiPark/second-run?style=flat-square) ![GitHub top language](https://img.shields.io/github/languages/top/moochipark/second-run?color=orange&logo=java&style=flat-square)
 ![main](./img/vivek-doshi-unsplash.jpg)
 
-#E
 
 - 이 저장소는 세미나 및 자가학습 자료를 정리하기위해 만들어진 두 번째 저장소 입니다.
 
