@@ -3,9 +3,6 @@
 ![main](./img/vivek-doshi-unsplash.jpg)
 
 
-# A
-
-
 - 이 저장소는 세미나 및 자가학습 자료를 정리하기위해 만들어진 두 번째 저장소 입니다.
 
 ## *Contents*
